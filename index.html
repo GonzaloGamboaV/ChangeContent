@@ -14,9 +14,23 @@
 
         const inputElement = document.getElementById('text1');
         const buttonElement = document.getElementById('button1');
+        const parentElement = document.getElementById('parent');
 
         inputElement.addEventListener('change', function(e){
             console.log(`The value you entered is ${e.target.value}`);
+        });
+        inputElement.addEventListener('input', function(e){
+            console.log(`The value you just type is ${e.target.value}`);
+        });
+        buttonElement.addEventListener('click', function(e){
+            console.log('You clicked on my button!')
+            e.stopPropagation();
+        })
+        parentElement.addEventListener('click', function(e){
+            console.log('You clicked on the parent containing div.')
+        })
+        buttonElement.addEventListener('mouseover', function(e){
+            console.log('Your mouse is on the buttone')
         });
     </script>
 
